@@ -1,0 +1,21 @@
+WEEL 1 DATA CLEANING & CALCULATED FIELDS
+----------------------------------------
+Project Name: Retail Sales Analytics
+
+1. DATASET CLEANING SUMMARY
+- Initial Row Count: 9994
+- Duplicate Records: Verified 0 duplicates found or removed
+- Missing Values Check: Verified 0% missing/blank values across key columns
+- Data Types Formatted:
+	* Order Date & Ship Date -> Date
+	* Sales, Profit, Discount -> Currency; 2 decimal places
+	* Quantity -> Number; 0 decimal places
+Used Power Query in Excel to verify the duplicated and missing rows.
+
+2. LIST OF CALCULATED FIELDS ADDED
+- Year: =YEAR([@[Order Date]]) -> Extracts 4-digit year for annual trends
+- Month: =TEXT([@]Order Date]],"mmm") -> Extracts month name for seasonal analysis
+- Year-Month: =TEXT([@[Order Date]]),"yyyy-mmm")
+- Profit Margin (%): =([@Profit]/[@Sales])*100 -> Measures profitability per transaction
+- Average Order Value (AOV): Total Sales/Total Unigue Orders -> Key summary metric
+Used Google Gemini to get an overview on how to draft this summary.
